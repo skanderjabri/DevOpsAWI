@@ -13,11 +13,13 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("event")
 @RestController
+@slf4j
 public class EventRestController {
     private final IEventServices eventServices;
 
     @PostMapping("/addPart")
     public Participant addParticipant(@RequestBody Participant participant){
+        log.info("hello")
         return eventServices.addParticipant(participant);
     }
     @PostMapping("/addEvent/{id}")
